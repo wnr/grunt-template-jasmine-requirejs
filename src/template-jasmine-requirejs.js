@@ -121,6 +121,9 @@ exports.process = function(grunt, task, context) {
   // Remove baseUrl and .js from src files
   context.scripts.src = grunt.util._.map(context.scripts.src, getRelativeModuleUrl);
 
+  // Remove baseUrl and .js from spec files
+  context.scripts.specs = grunt.util._.map(context.scripts.specs, getRelativeModuleUrl);
+
 
   // Prepend loaderPlugins to the appropriate files
   if (context.options.loaderPlugin) {
